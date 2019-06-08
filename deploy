@@ -1,0 +1,9 @@
+#!/bin/sh      
+ssh ubuntu@3.14.135.237 <<EOF        
+ cd /var/www/html
+ rm -Rf html
+ git clone https://github.com/Aneeshn25/html.git 
+ mv html/index.html ./index.html
+ rm -Rf html
+ exit       
+EOF
