@@ -10,6 +10,6 @@ do
         continue;
     fi
     IP=$(aws ec2 describe-instances --instance-ids $ID --region us-east-2 --query Reservations[].Instances[].PrivateIpAddress --output text)
-    ssh /home/ubuntu/key.pem ubuntu@${IP} 'bash -s' < remote_script.sh
+    ssh /home/ubuntu/key.pem ubuntu@${IP} < remote_script.sh
 done
 rm -Rf ec2-metadata
